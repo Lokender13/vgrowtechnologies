@@ -5,6 +5,7 @@ import Link from "next/link";
 import { navigationLinks, serviceCategories } from "@/data/navigation";
 import { COMPANY_DETAILS } from "@/lib/utils";
 import { Button } from "@/ui/Button";
+import { Logo } from "@/ui/Logo";
 import { X, ChevronDown, Phone, Mail, ArrowRight } from "lucide-react";
 
 interface MobileMenuProps {
@@ -31,9 +32,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
         <div className="p-6">
           {/* Header */}
           <div className="flex items-center justify-between pb-6 border-b border-white/10">
-            <span className="font-bold text-lg text-white">
-              Navigation Menu
-            </span>
+            <Logo size="sm" />
             <button
               onClick={onClose}
               className="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 focus:outline-none focus:ring-2 focus:ring-brand-orange"
