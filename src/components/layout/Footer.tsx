@@ -28,7 +28,7 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-12 border-b border-white/10">
           {/* Brand Info Column */}
           <div className="lg:col-span-4 space-y-5">
-            <Logo />
+            <Logo size="lg" />
             <p className="text-slate-300 text-sm leading-relaxed max-w-sm">
               VGrow Technologies is an international-caliber digital marketing and technology solutions agency. We engineer high-converting web applications, authoritative SEO strategies, and automated growth engines for ambitious businesses worldwide.
             </p>

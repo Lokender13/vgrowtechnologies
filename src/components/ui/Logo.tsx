@@ -5,30 +5,47 @@ import { cn } from "@/lib/utils";
 
 interface LogoProps {
   className?: string;
-  variant?: "light" | "dark" | "default";
+  size?: "sm" | "md" | "lg";
   showText?: boolean;
 }
 
-export const Logo: React.FC<LogoProps> = ({ className, showText = true }) => {
+export const Logo: React.FC<LogoProps> = ({
+  className,
+  size = "md",
+  showText = true,
+}) => {
+  const sizeStyles = {
+    sm: "h-10 w-24 sm:w-28",
+    md: "h-12 w-28 sm:w-32",
+    lg: "h-16 w-36 sm:w-44",
+  };
+
   return (
     <Link
       href="/"
       className={cn(
-        "flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-brand-orange rounded-lg p-1 transition-transform",
+        "flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-brand-orange rounded-xl p-1 transition-transform",
         className
       )}
-      aria-label="VGrow Technologies Home"
+      aria-label="VGrow Technologies — Elevating Brands. Defining Excellence."
     >
-      <div className="relative h-11 w-24 sm:w-28 flex items-center justify-center bg-white rounded-md px-1 py-0.5 shadow-sm overflow-hidden border border-white/20 transition-all duration-300 group-hover:shadow-md group-hover:scale-105">
+      {/* Crisp Logo Container */}
+      <div
+        className={cn(
+          "relative flex items-center justify-center bg-white rounded-xl px-2 py-1 shadow-md overflow-hidden border border-white/20 transition-all duration-300 group-hover:shadow-brand-orange/20 group-hover:scale-105 group-hover:border-brand-orange/40",
+          sizeStyles[size]
+        )}
+      >
         <Image
           src="/images/logo.png"
-          alt="VGrow Technologies Logo"
+          alt="VGrow Technologies — Elevating Brands. Defining Excellence."
           fill
           priority
-          sizes="(max-width: 768px) 100px, 120px"
-          className="object-contain"
+          sizes="(max-width: 768px) 120px, 180px"
+          className="object-contain p-1"
         />
       </div>
+
       {showText && (
         <div className="hidden sm:flex flex-col">
           <span className="font-extrabold text-lg tracking-tight text-white group-hover:text-brand-orange transition-colors">
